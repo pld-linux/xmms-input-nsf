@@ -1,51 +1,44 @@
-%define name    @PACKAGE@
-%define version @VERSION@
-%define release 1
-%define serial  1
-%define input_plugin_dir @XMMS_INPUT_PLUGIN_DIR@
+Summary:	NSF Input plugin for xmms
+Name:		xmms-input-nsf
+Version:	0.0.3
+Release:	1
+License:	GPL
+Group:		X11/Applications/Multimedia
+Group(de):	X11/Applikationen/Multimedia
+Group(pl):	X11/Aplikacje/Multimedia
+Source0:	http://www.geocities.co.jp/SiliconValley-SanJose/2956/RPMS/xmms-nsf-%{version}.tar.gz
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	xmms-devel >= 1.2.3
+Requires:	xmms
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	x11amp-nsf xmms-nsf
 
-Summary:        NSF Input plugin for xmms
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Serial:         %{serial}
-Copyright:      GPL
-Group:          Applications/Multimedia
-Source:         xmms-nsf-%{version}.tar.gz
-Requires:       xmms >= 1.0
-BuildRoot:      /var/tmp/%{name}-%{version}
-Obsoletes:      x11amp-nsf xmms-nsf
-NoSource:       0
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 xmms-nsf iutput plugin for xmms.
 
 %prep
-%setup -q
+%setup -q -n xmms-nsf-%{version}
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure
-make
+%configure \
+	--disable-static
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir $RPM_BUILD_ROOT
-make DESTDIR=$RPM_BUILD_ROOT install
 
-%post
-/sbin/ldconfig  
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-%postun -p /sbin/ldconfig 
+gzip -9nf README README.jp
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc COPYING README README.jp
-%{input_plugin_dir}/libnsf.la
-%{input_plugin_dir}/libnsf.so
-
-%changelog
-* Mon Jul 3 2000 Shinya Uchimaki <abekiti@mbg.sphere.ne.jp>
-- 1st release.
+%defattr(644,root,root,755)
+%doc README.gz
+%lang(jp) %doc README.jp.gz
+%{_libdir}/xmms/Input/libnsf.so
