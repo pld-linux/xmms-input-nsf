@@ -17,7 +17,7 @@ Obsoletes:	x11amp-nsf xmms-nsf
 
 
 %description
-xmms-nsf iutput plugin for xmms.
+xmms-nsf input plugin for xmms.
 
 %description -l pl
 Wtyczka wej¶cia NSF dla xmms.
