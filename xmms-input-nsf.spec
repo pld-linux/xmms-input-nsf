@@ -2,7 +2,7 @@ Summary:	NSF Input plugin for xmms
 Summary(pl):	Wtyczka wej¶cia NSF dla xmms
 Name:		xmms-input-nsf
 Version:	0.0.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://www.geocities.co.jp/SiliconValley-SanJose/2956/RPMS/xmms-nsf-%{version}.tar.gz
@@ -50,5 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.gz
-%lang(jp) %doc README.jp.gz
+%lang(ja) %doc README.jp.gz
 %{_libdir}/xmms/Input/libnsf.so
