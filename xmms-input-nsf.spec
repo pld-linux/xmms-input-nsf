@@ -31,8 +31,8 @@ Wtyczka wej¶cia NSF dla xmms.
 rm -f missing
 libtoolize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--disable-static
 %{__make}
