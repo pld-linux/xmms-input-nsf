@@ -1,7 +1,8 @@
 Summary:	NSF Input plugin for xmms
+Summary(pl):	Wtyczka wej¶cia NSF dla xmms
 Name:		xmms-input-nsf
 Version:	0.0.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Group(de):	X11/Applikationen/Multimedia
@@ -18,6 +19,9 @@ Obsoletes:	x11amp-nsf xmms-nsf
 
 %description
 xmms-nsf iutput plugin for xmms.
+
+%description -l pl
+Wtyczka wej¶cia NSF dla xmms.
 
 %prep
 %setup -q -n xmms-nsf-%{version}
