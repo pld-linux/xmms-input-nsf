@@ -15,8 +15,6 @@ Requires:	xmms
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	x11amp-nsf xmms-nsf
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 xmms-nsf iutput plugin for xmms.
