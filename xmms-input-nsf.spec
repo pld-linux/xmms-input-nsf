@@ -30,7 +30,7 @@ Wtyczka wej¶cia NSF dla xmms.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
@@ -42,13 +42,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README README.jp
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz
-%lang(ja) %doc README.jp.gz
+%doc README
+%lang(ja) %doc README.jp
 %{_libdir}/xmms/Input/libnsf.so
