@@ -6,6 +6,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://www.geocities.co.jp/SiliconValley-SanJose/2956/RPMS/xmms-nsf-%{version}.tar.gz
+# Source0-md5:	45c55a17d81cd82d36d59bdb231777df
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.0
