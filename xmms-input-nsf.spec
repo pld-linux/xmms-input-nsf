@@ -2,7 +2,7 @@ Summary:	NSF Input plugin for xmms
 Summary(pl):	Wtyczka wej¶cia NSF dla xmms
 Name:		xmms-input-nsf
 Version:	0.0.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://www.geocities.co.jp/SiliconValley-SanJose/2956/RPMS/xmms-nsf-%{version}.tar.gz
@@ -11,11 +11,12 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libtool
+BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	xmms-devel >= 1.2.3
 Requires:	xmms
+Obsoletes:	x11amp-nsf
+Obsoletes:	xmms-nsf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	x11amp-nsf xmms-nsf
-
 
 %description
 xmms-nsf input plugin for xmms.
@@ -39,7 +40,8 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %lang(ja) %doc README.jp
-%{_libdir}/xmms/Input/libnsf.so
+%{xmms_input_plugindir}/libnsf.so
