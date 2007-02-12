@@ -1,5 +1,5 @@
 Summary:	NSF Input plugin for XMMS
-Summary(pl):	Wtyczka wej¶ciowa XMMS-a odtwarzaj±ca pliki NSF
+Summary(pl.UTF-8):   Wtyczka wejÅ›ciowa XMMS-a odtwarzajÄ…ca pliki NSF
 Name:		xmms-input-nsf
 Version:	0.0.3
 Release:	5
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xmms-nsf input plugin for xmms.
 
-%description -l pl
-Wtyczka wej¶ciowa dla XMMS-a odtwarzaj±ca pliki NSF.
+%description -l pl.UTF-8
+Wtyczka wejÅ›ciowa dla XMMS-a odtwarzajÄ…ca pliki NSF.
 
 %prep
 %setup -q -n xmms-nsf-%{version}
